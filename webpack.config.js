@@ -70,6 +70,7 @@ const config = {
     static: path.join(__dirname, 'build'),
     compress: true,
     port: WEBPACK_PORT,
+    historyApiFallback: true,
   },
 
   devtool: __DEV__ ? 'eval-source-map' : 'source-map',
