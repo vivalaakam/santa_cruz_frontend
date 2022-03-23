@@ -1,10 +1,10 @@
 const path = require('path');
-const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const { NODE_ENV = 'development', WEBPACK_PORT = 3001 } = process.env
-const __DEV__ = NODE_ENV === 'development'
+const { NODE_ENV = 'development', WEBPACK_PORT = 3001 } = process.env;
+const __DEV__ = NODE_ENV === 'development';
 
 const config = {
   entry: './src/index.tsx',
@@ -17,11 +17,7 @@ const config = {
           {
             loader: 'babel-loader',
             options: {
-              presets: [
-                '@babel/preset-env',
-                '@babel/preset-react',
-                '@babel/preset-typescript',
-              ],
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
             },
           },
           {
@@ -29,7 +25,7 @@ const config = {
             options: {
               sourceMap: __DEV__,
             },
-          }
+          },
         ],
       },
       {
@@ -53,11 +49,7 @@ const config = {
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        // NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      },
-    }),
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
     }),
@@ -65,6 +57,10 @@ const config = {
   ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      src: path.resolve(__dirname, 'src'),
+      proto: path.resolve(__dirname, 'src/proto'),
+    },
   },
   output: {
     path: path.resolve(__dirname, 'build'),

@@ -1,13 +1,15 @@
 import React from 'react';
-import { styled } from '@linaria/react';
 import { GlobalContainer } from './global-container';
-
-const Container = styled.div``;
+import { GrpcContext } from './grpc-context';
+import { Workouts } from './components/workouts';
 
 export function App() {
+
   return (
     <GlobalContainer>
-      <Container>content</Container>
+      <GrpcContext.Provider value={process.env.GRPC_HOST ?? null}>
+        <Workouts />
+      </GrpcContext.Provider>
     </GlobalContainer>
   );
 }

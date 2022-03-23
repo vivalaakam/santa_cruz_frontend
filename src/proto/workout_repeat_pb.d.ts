@@ -1,31 +1,28 @@
-// package: santa_cruz
-// file: workout_repeat.proto
+import * as jspb from 'google-protobuf'
 
-import * as jspb from "google-protobuf";
+
 
 export class WorkoutRepeat extends jspb.Message {
   getId(): number;
-  setId(value: number): void;
+  setId(value: number): WorkoutRepeat;
 
   getWorkoutId(): number;
-  setWorkoutId(value: number): void;
+  setWorkoutId(value: number): WorkoutRepeat;
 
   getExerciseId(): number;
-  setExerciseId(value: number): void;
+  setExerciseId(value: number): WorkoutRepeat;
 
   getRepeats(): number;
-  setRepeats(value: number): void;
+  setRepeats(value: number): WorkoutRepeat;
 
-  hasWeight(): boolean;
-  clearWeight(): void;
   getWeight(): number;
-  setWeight(value: number): void;
+  setWeight(value: number): WorkoutRepeat;
+  hasWeight(): boolean;
+  clearWeight(): WorkoutRepeat;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WorkoutRepeat.AsObject;
   static toObject(includeInstance: boolean, msg: WorkoutRepeat): WorkoutRepeat.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
   static serializeBinaryToWriter(message: WorkoutRepeat, writer: jspb.BinaryWriter): void;
   static deserializeBinary(bytes: Uint8Array): WorkoutRepeat;
   static deserializeBinaryFromReader(message: WorkoutRepeat, reader: jspb.BinaryReader): WorkoutRepeat;
@@ -37,7 +34,12 @@ export namespace WorkoutRepeat {
     workoutId: number,
     exerciseId: number,
     repeats: number,
-    weight: number,
+    weight?: number,
+  }
+
+  export enum WeightCase { 
+    _WEIGHT_NOT_SET = 0,
+    WEIGHT = 5,
   }
 }
 
