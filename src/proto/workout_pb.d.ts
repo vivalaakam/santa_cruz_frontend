@@ -82,6 +82,16 @@ export class UpdateWorkoutRequest extends jspb.Message {
   hasDay(): boolean;
   clearDay(): UpdateWorkoutRequest;
 
+  getComment(): string;
+  setComment(value: string): UpdateWorkoutRequest;
+  hasComment(): boolean;
+  clearComment(): UpdateWorkoutRequest;
+
+  getRate(): number;
+  setRate(value: number): UpdateWorkoutRequest;
+  hasRate(): boolean;
+  clearRate(): UpdateWorkoutRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateWorkoutRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateWorkoutRequest): UpdateWorkoutRequest.AsObject;
@@ -95,6 +105,8 @@ export namespace UpdateWorkoutRequest {
     id: number,
     status?: WorkoutStatus,
     day?: string,
+    comment?: string,
+    rate?: number,
   }
 
   export enum StatusCase { 
@@ -105,6 +117,16 @@ export namespace UpdateWorkoutRequest {
   export enum DayCase { 
     _DAY_NOT_SET = 0,
     DAY = 3,
+  }
+
+  export enum CommentCase { 
+    _COMMENT_NOT_SET = 0,
+    COMMENT = 6,
+  }
+
+  export enum RateCase { 
+    _RATE_NOT_SET = 0,
+    RATE = 7,
   }
 }
 
@@ -156,6 +178,12 @@ export class Workout extends jspb.Message {
   getUpdatedAt(): string;
   setUpdatedAt(value: string): Workout;
 
+  getComment(): string;
+  setComment(value: string): Workout;
+
+  getRate(): number;
+  setRate(value: number): Workout;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Workout.AsObject;
   static toObject(includeInstance: boolean, msg: Workout): Workout.AsObject;
@@ -171,6 +199,8 @@ export namespace Workout {
     day: string,
     createdAt: string,
     updatedAt: string,
+    comment: string,
+    rate: number,
   }
 }
 

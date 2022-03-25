@@ -2,11 +2,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { CreateWorkoutRequest, GetWorkoutsRequest, Workout } from '../../proto/workout_pb';
 import { container, content, leftSide } from './styled';
-import { WorkoutRow } from '../workout-row/workout-row';
+import { WorkoutRow } from '../workout-row';
 import { WorkoutItem } from '../workout-item';
-import { Button } from '../ui';
-import { useWorkoutService } from '../../hooks/use-workout-service';
-import { Divider } from '../ui/divider/divider';
+import { Button, Divider } from '../ui';
+import { useWorkoutService } from '../../hooks';
 
 function sortedWorkouts(workouts: Workout[]): Workout[] {
   const sorted = [...workouts];
@@ -49,7 +48,7 @@ export function Workouts() {
       </aside>
       <main className={content}>
         <Routes>
-          <Route path="/:topicId" element={<WorkoutItem />} />
+          <Route path="/:workoutId" element={<WorkoutItem />} />
           <Route index element={<h3>Please select a workout.</h3>} />
         </Routes>
       </main>

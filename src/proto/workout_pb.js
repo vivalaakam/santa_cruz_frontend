@@ -724,7 +724,9 @@ proto.santa_cruz.UpdateWorkoutRequest.toObject = function(includeInstance, msg) 
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     status: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    day: jspb.Message.getFieldWithDefault(msg, 3, "")
+    day: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    comment: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    rate: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -773,6 +775,14 @@ proto.santa_cruz.UpdateWorkoutRequest.deserializeBinaryFromReader = function(msg
       var value = /** @type {string} */ (reader.readString());
       msg.setDay(value);
       break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setComment(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRate(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -820,6 +830,20 @@ proto.santa_cruz.UpdateWorkoutRequest.serializeBinaryToWriter = function(message
   if (f != null) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeInt32(
+      7,
       f
     );
   }
@@ -913,6 +937,78 @@ proto.santa_cruz.UpdateWorkoutRequest.prototype.clearDay = function() {
  */
 proto.santa_cruz.UpdateWorkoutRequest.prototype.hasDay = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string comment = 6;
+ * @return {string}
+ */
+proto.santa_cruz.UpdateWorkoutRequest.prototype.getComment = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.santa_cruz.UpdateWorkoutRequest} returns this
+ */
+proto.santa_cruz.UpdateWorkoutRequest.prototype.setComment = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.santa_cruz.UpdateWorkoutRequest} returns this
+ */
+proto.santa_cruz.UpdateWorkoutRequest.prototype.clearComment = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.santa_cruz.UpdateWorkoutRequest.prototype.hasComment = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int32 rate = 7;
+ * @return {number}
+ */
+proto.santa_cruz.UpdateWorkoutRequest.prototype.getRate = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.santa_cruz.UpdateWorkoutRequest} returns this
+ */
+proto.santa_cruz.UpdateWorkoutRequest.prototype.setRate = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.santa_cruz.UpdateWorkoutRequest} returns this
+ */
+proto.santa_cruz.UpdateWorkoutRequest.prototype.clearRate = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.santa_cruz.UpdateWorkoutRequest.prototype.hasRate = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -1183,7 +1279,9 @@ proto.santa_cruz.Workout.toObject = function(includeInstance, msg) {
     status: jspb.Message.getFieldWithDefault(msg, 2, 0),
     day: jspb.Message.getFieldWithDefault(msg, 3, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 5, "")
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    comment: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    rate: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -1239,6 +1337,14 @@ proto.santa_cruz.Workout.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setUpdatedAt(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setComment(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRate(value);
       break;
     default:
       reader.skipField();
@@ -1301,6 +1407,20 @@ proto.santa_cruz.Workout.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getComment();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getRate();
+  if (f !== 0) {
+    writer.writeInt32(
+      7,
       f
     );
   }
@@ -1394,6 +1514,42 @@ proto.santa_cruz.Workout.prototype.getUpdatedAt = function() {
  */
 proto.santa_cruz.Workout.prototype.setUpdatedAt = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string comment = 6;
+ * @return {string}
+ */
+proto.santa_cruz.Workout.prototype.getComment = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.santa_cruz.Workout} returns this
+ */
+proto.santa_cruz.Workout.prototype.setComment = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional int32 rate = 7;
+ * @return {number}
+ */
+proto.santa_cruz.Workout.prototype.getRate = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.santa_cruz.Workout} returns this
+ */
+proto.santa_cruz.Workout.prototype.setRate = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 

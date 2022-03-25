@@ -2,13 +2,20 @@ import { css } from '@linaria/core';
 
 export const container = css`
   background-color: var(--button-bg-color);
-  border-radius: 12px;
   border: initial;
   color: var(--button-text-color);
-  padding: 12px 16px;
-  font-size: inherit;
-  line-height: inherit;
-  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 24px;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+  line-height: 120%;
+
   transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;

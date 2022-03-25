@@ -2,8 +2,10 @@ import { css } from '@linaria/core';
 import Color from 'color';
 
 const mainColor = Color('#fbfbfe');
-const primaryColor = Color('#7a89fe');
-const secondaryColor = Color('#7a89fe');
+const blue = Color('#7a89fe');
+const green = Color('#17B294');
+const red = Color('#FB8477');
+const secondColor = Color('#232859');
 
 export const globals = css`
   :global() {
@@ -16,11 +18,18 @@ export const globals = css`
       --action-hover-color: #7a89fe9a;
       --action-active-color: #7a89fecc;
 
-      --button-bg-color: ${primaryColor.fade(0.25).toString()};
+      --button-bg-color: ${blue.fade(0.25).toString()};
       --button-text-color: #ffffff;
-      --button-hover-color: ${primaryColor.toString()};
+      --button-hover-color: ${blue.toString()};
 
-      --divider-bg-color: #f2f2f2;
+      --divider-bg-color: #e1e1fb;
+
+      --input-border: ${secondColor.fade(0.5).toString()};
+      --input-hover-border: ${secondColor.toString()};
+
+      --green: ${green.toString()};
+      --blue: ${blue.toString()};
+      --red: ${red.toString()};
     }
 
     html {

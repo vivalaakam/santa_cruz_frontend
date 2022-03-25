@@ -3,7 +3,7 @@ import { css } from '@linaria/core';
 export const container = css`
   padding: 12px 16px;
   text-decoration: none;
-  border-radius: 12px;
+  border-radius: 8px;
 
   &:hover {
     background-color: var(--action-hover-color);
